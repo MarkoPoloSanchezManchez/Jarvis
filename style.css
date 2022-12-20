@@ -55,6 +55,8 @@
   height: 50px;
   border-radius: 20px;
   background: rgb(202 253 255 / 50%);
+  
+  cursor: pointer;
 }
 
 .main .input .talk {
@@ -67,7 +69,6 @@
   justify-content: center;
   align-items: center;
   font-size: 15px;
-  cursor: pointer;
 }
 
 .main .input .talk i {
