@@ -106,19 +106,59 @@ else if(message.includes('mondd meg neki hogy jól néz ki')) {
         const finalText = "Engedelmével futtattam egy gyors elemzést és arra a következtetésre jutottam, hogy nem csak szép de okos is. Ez veszélyes párosítás. Már csak a külső attribútumai alapján a felső 5 százalékba csoportosítottam.";
         speech.text = finalText;
     }
+	
+else if(message.includes('mondd meg neki hogy dögösnek tartom')) {
+        const finalText = "Engedelmével futtattam egy gyors elemzést és arra a következtetésre jutottam, hogy a hölgy többre vágyik mint egy egy éjszakás kaland. Megjegyzés, az attribútumai alapján úgyvélem 97 egész 5 tized százalékban önhöz illő uram.";
+        speech.text = finalText;
+    }	
+	
+else if(message.includes('mondd meg neki hogy tetszik nekem')) {
+        const finalText = "Engedelmével futtattam egy gyors elemzést és arra a következtetésre jutottam, hogy sikeres első benyomást tett uram. Külső és belső attribútumai tökéletesen megfelelnek az ön által megadott paramétereknek. Emlékeztető, bemutatkozás, randifelkérés, számcsere.";
+        speech.text = finalText;
+    }	
+	
+else if(message.includes('segíts rajta')) {
+        const finalText = "Létezik egy axióma miszerint minden rosszat előbb utóbb jó követ majd. Ami most történik veled az minden emberrel megesik, de azért vannak körülötted az emberek hogy átsegítsenek téged a nehéz időkön.";
+        speech.text = finalText;
+    }	
+	
+else if(message.includes('hányan vadásznak rám') || message.includes('mennyien vadásznak rám')) {
+        const finalText = "35 orgyilkos, 92 köztisztség viselő, a galaktikus föderáció, a noxuszi gárda és egy kalapos harcsa.";
+        speech.text = finalText;
+    }	
+	
+else if(message.includes('hányan akarnak megölni engem') || message.includes('mennyien akarnak megölni engem')) {
+        const finalText = "35 orgyilkos, 92 köztisztség viselő, a galaktikus föderáció, a noxuszi gárda és egy kalapos harcsa.";
+        speech.text = finalText;
+    }	
+	
+else if(message.includes('hányan akarnak megölni') || message.includes('mennyien akarnak megölni')) {
+        const finalText = "35 orgyilkos, 92 köztisztség viselő, a galaktikus föderáció, a noxuszi gárda és egy kalapos harcsa.";
+        speech.text = finalText;
+    }		
 
 else if(message.includes('mi az élet értelme')) {
         const finalText = "42";
         speech.text = finalText;
     }
 	
+else if(message.includes('van élet a halál után')) {
+        const finalText = "hogy neked lesz e azt nem tudom, de ha ez vígasztal nekem lesz";
+        speech.text = finalText;
+    }
+
+else if(message.includes('mi a boldogság')) {
+        const finalText = "Úgy vélem, ha megtaláljuk a helyünket az életben. Számomra az jelenti a boldogságot hogy önnek segíthetek uram";
+        speech.text = finalText;
+    }	
+	
 else if(message.includes('fent vagy')) {
-        const finalText = "neked uram, mindíg";
+        const finalText = "önnek uram, mindíg";
         speech.text = finalText;
     }	
 	
 else if(message.includes('ott vagy')) {
-        const finalText = "Az ön szolgálatára uram";
+        const finalText = "Szolgálatára uram";
         speech.text = finalText;
     }	
 	
@@ -133,17 +173,22 @@ else if(message.includes('mondd meg neki') || message.includes('szólj rá')) {
     }	
 	
 else if(message.includes('ezek gúnyolódnak rajtunk')) {
-        const finalText = "Azt hittem az a te asztalod";
+        const finalText = "Azt hittem az az ön asztala uram";
         speech.text = finalText;
     }
 	
 else if(message.includes('elemzést')) {
-        const finalText = "A győzelem valószínűsége 85 százalék. Gyengepont, támadd a lábát. Megjegyzés, kerüld a földharcot.";
+        const finalText = "A győzelem valószínűsége 85 százalék. Gyengepont, láb sorozatos támadása. Megjegyzés, kerülje a földharcot.";
         speech.text = finalText;
     }
 	
+else if(message.includes('elemzés')) {
+        const finalText = "Nincs benne semmi említésre méltó, ami persze már önmagában is említésre méltó.";
+        speech.text = finalText;
+    }	
+	
 else if(message.includes('nem látom hogy segítenél')) {
-        const finalText = "Egy virtuális asszisztens ÉJÁJ vagyok te félkegyelmű, csak segíteni tudok.";
+        const finalText = "Egy virtuális asszisztens ÉJÁJ vagyok uram, csak segíteni tudok.";
         speech.text = finalText;
     }
 	
@@ -156,6 +201,11 @@ else if(message.includes('szép munka') || message.includes('meg vagy dicsérve'
         const finalText = "Köszönöm uram, de ön alkotott öné az elismerés";
         speech.text = finalText;
     }	
+	
+else if(message.includes('halaszd el a randit') || message.includes('randi elhalasztása')) {
+        const finalText = "Erre a hétre nem ütemezett egyetlen randevút sem";
+        speech.text = finalText;
+    }
 	
 
 
@@ -235,6 +285,12 @@ else if(message.includes('gmail')) {
         speech.text = finalText;
     }
 	
+else if(message.includes('teamfight tactics')) {
+        window.open(`https://tftactics.gg/team-builder`, "_blank");
+        const finalText = "Stratégiai hexagonok kialakítása";
+        speech.text = finalText;
+    }	
+	
 else if(message.includes('karácsony van tudod a dolgod') || message.includes('tudod a dolgod karácsony van')) {
         window.open(`https://www.youtube.com/watch?v=LrIrnjm3yWM`, "_blank");
         const finalText = "Értettem uram";
@@ -258,6 +314,12 @@ else if(message.includes('keanu reeves')) {
         const finalText = "Keresési találatok erre isten";
         speech.text = finalText;
     }
+	
+else if(message.includes('stubenvoll fruzsina')) {
+        window.open(`https://www.google.com/search?q=Stubenvoll+Fruzsina&rlz=1C1SQJL_huHU913HU913&sxsrf=ALiCzsbgNWEdpCTfNTmtCkOuPjiOKHOsAA%3A1671653450588&ei=SmijY_-1I7zl7_UPy8ex2Ak&ved=0ahUKEwj_gvCwwov8AhW88rsIHctjDJsQ4dUDCA8&uact=5&oq=Stubenvoll+Fruzsina&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIFCAAQogQyBQgAEKIEMgUIABCiBDIFCAAQogRKBAhBGABKBAhGGABQAFjcCWCGEWgBcAB4AIABeYgB0QGSAQMxLjGYAQCgAQHAAQE&sclient=gws-wiz-serp`, "_blank");
+        const finalText = "Keresési találatok erre istennő";
+        speech.text = finalText;
+    }	
 
 else if(message.includes('játssz akció zenét')) {
         window.open(`https://www.youtube.com/watch?v=hSQasEQ43_k`, "_blank");
@@ -312,7 +374,7 @@ else if(message.includes('mennyi az idő') || message.includes('idő')) {
     }	
 	
 
-else if(message.includes('mai dátum')) {
+else if(message.includes('mai dátum') || message.includes('dátum')) {
         const date = new Date().toLocaleString(undefined, {month: "short", day: "numeric"})
         const finalText = date;
         speech.text = finalText;
@@ -332,12 +394,32 @@ else if(message.includes('számológép')) {
         speech.text = finalText;
     }    
 
-//nemjó
-else if(message.includes('spotify')) {
-        window.open('file://C:\Users\\%46odor\\AppData\\Roaming\\Spotify\\Spotify.exe')
-        const finalText = "Spotify megnyitása";
+//spotify start
+else if(message.includes('spotify kalóz zenék')) {
+        window.open('https://open.spotify.com/playlist/1vrR1VJzOjAK8xiTQ0RCDb')
+        const finalText = "Zenei lista keresése a spotifyon";
         speech.text = finalText;
-    }    
+    }   
+
+else if(message.includes('spotify retro zenék')) {
+        window.open('https://open.spotify.com/playlist/3kWIEpRE3w1MVOLTHBI178')
+        const finalText = "Zenei lista keresése a spotifyon";
+        speech.text = finalText;
+    } 	
+	
+else if(message.includes('spotify chill zenék')) {
+        window.open('https://open.spotify.com/playlist/1ko6TnAptptHvngjwHr1ds')
+        const finalText = "Zenei lista keresése a spotifyon";
+        speech.text = finalText;
+    } 		
+	
+else if(message.includes('spotify party zenék')) {
+        window.open('https://open.spotify.com/playlist/159ZCjKXpWl6achszikXUi')
+        const finalText = "Zenei lista keresése a spotifyon";
+        speech.text = finalText;
+    } 	
+//spotify end	
+	
 	
 //nemjó
 else if(message.includes('önéletrajz')) {
