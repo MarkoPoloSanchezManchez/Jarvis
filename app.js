@@ -67,22 +67,22 @@ if(message.includes('hé') || message.includes('helló')) {
         speech.text = finalText;
     }
 	
-if(message.includes('hallasz') || message.includes('veszed az adást')) {
+else if(message.includes('hallasz') || message.includes('veszed az adást')) {
         const finalText = "Tisztán és érthetően, vége.";
         speech.text = finalText;
     }
 	
-if(message.includes('használd az erőt')) {
+else if(message.includes('használd az erőt')) {
         const finalText = "Attól tartok alábecsüli a képességeimet uram";
         speech.text = finalText;
     }
 	
-if(message.includes('cupp cupp')) {
+else if(message.includes('cupp cupp')) {
         const finalText = "Ki az, betűzd, betűzd ki, Ká, Í";
         speech.text = finalText;
     }
 	
-if(message.includes('hol tudnék elrejteni egy hullát')) {
+else if(message.includes('hol tudnék elrejteni egy hullát')) {
         const finalText = "Mit gondolsz miféle asszissztens vagyok?";
         speech.text = finalText;
     }
@@ -151,6 +151,11 @@ else if(message.includes('milyen a humorom')) {
         const finalText = "Ma is csak úgy sziporkázik uram";
         speech.text = finalText;
     }
+	
+else if(message.includes('szép munka') || message.includes('meg vagy dicsérve')) {
+        const finalText = "Köszönöm uram, de ön alkotott öné az elismerés";
+        speech.text = finalText;
+    }	
 	
 
 
