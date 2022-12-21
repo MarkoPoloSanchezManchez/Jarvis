@@ -66,6 +66,26 @@ if(message.includes('hé') || message.includes('helló')) {
         const finalText = "Üdv főnök";
         speech.text = finalText;
     }
+	
+if(message.includes('hallasz') || message.includes('veszed az adást')) {
+        const finalText = "Tisztán és érthetően, vége.";
+        speech.text = finalText;
+    }
+	
+if(message.includes('használd az erőt')) {
+        const finalText = "Attól tartok alábecsüli a képességeimet uram";
+        speech.text = finalText;
+    }
+	
+if(message.includes('cupp cupp')) {
+        const finalText = "Ki az, betűzd, betűzd ki, Ká, Í";
+        speech.text = finalText;
+    }
+	
+if(message.includes('hol tudnék elrejteni egy hullát')) {
+        const finalText = "Mit gondolsz miféle asszissztens vagyok?";
+        speech.text = finalText;
+    }
 
 else if(message.includes('hogy vagy')) {
         const finalText = "Csodásan érzem magam";
@@ -127,6 +147,11 @@ else if(message.includes('nem látom hogy segítenél')) {
         speech.text = finalText;
     }
 	
+else if(message.includes('milyen a humorom')) {
+        const finalText = "Ma is csak úgy sziporkázik uram";
+        speech.text = finalText;
+    }
+	
 
 
 
@@ -148,7 +173,20 @@ else if(message.includes('wikipédia')) {
         window.open(`https://en.wikipedia.org/wiki/${message.replace("wikipédia", "")}`, "_blank");
         const finalText = "A keresett objektumhoz a következőket társítja a wikipédia" + message.replace("wikipédia", "");
         speech.text = finalText;
-    }   
+    }  
+	
+else if(message.includes('útvonalterv')) {
+        window.open(`https://www.google.com/search?q=google maps${message.replace("útvonalterv", "")}`, "_blank");
+        const finalText = "A keresett helység lokalizálása" + message.replace("útvonalterv", "");
+        speech.text = finalText;
+    }  
+
+//nem jó
+else if(message.includes('időzítő') && message.includes('perc')) {
+        window.open(`https://www.google.com/search?q=${message.replace("időzítő", "timer")}`, "_blank");
+        const finalText = "Időzítő beállítva";
+        speech.text = finalText;
+    } 	
 
 else if(message.includes('fordítás')) {
         window.open(`https://translate.google.hu/?hl=hu&tab=rT&sl=en&tl=hu&text=${message.replace("fordítás", "")}&op=translate`, "_blank"); 
@@ -174,9 +212,27 @@ else if(message.includes('időjárás')) {
         speech.text = finalText;
     }	
 	
+else if(message.includes('fej vagy írás')) {
+        window.open(`https://www.google.com/search?q=fej+vagy+%C3%ADr%C3%A1s&rlz=1C1SQJL_huHU913HU913&oq=fej+vagy+&aqs=chrome.0.0i355i512j46i512j69i57j0i512l7.3555j0j15&sourceid=chrome&ie=UTF-8`, "_blank");
+        const finalText = "érme feldobása";
+        speech.text = finalText;
+    }
+	
+else if(message.includes('dobás')) {
+        window.open(`https://www.google.com/search?q=roll+dice&rlz=1C1SQJL_huHU913HU913&oq=roll+dice&aqs=chrome..69i57j0i512l9.3971j0j7&sourceid=chrome&ie=UTF-8`, "_blank");
+        const finalText = "Kocka eldobása";
+        speech.text = finalText;
+    }
+	
 else if(message.includes('gmail')) {
         window.open(`https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox`, "_blank");
         const finalText = "Üzenetek megnyitása";
+        speech.text = finalText;
+    }
+	
+else if(message.includes('karácsony van tudod a dolgod') || message.includes('tudod a dolgod karácsony van')) {
+        window.open(`https://www.youtube.com/watch?v=LrIrnjm3yWM`, "_blank");
+        const finalText = "Értettem uram";
         speech.text = finalText;
     }
 
@@ -231,6 +287,15 @@ else if(message.includes('portfolio')) {
         const finalText = "Márk portfóliójának megnyitása";
         speech.text = finalText;
     }
+	
+//nemjó	
+else if(message.includes('előzmények')) {
+        window.open(`chrome://history/`, "_blank");
+        const finalText = "Keresési előzmények megnyitása";
+        speech.text = finalText;
+    }
+	
+
 
 
 //egyéb
@@ -241,30 +306,35 @@ else if(message.includes('mennyi az idő') || message.includes('idő')) {
         speech.text = finalText;
     }	
 	
+
 else if(message.includes('mai dátum')) {
         const date = new Date().toLocaleString(undefined, {month: "short", day: "numeric"})
         const finalText = date;
         speech.text = finalText;
     }	
 	
+//csak gépen	
 else if(message.includes('kalkulátor')) {
         window.open('Calculator:///')
         const finalText = "Számológép megnyitása";
         speech.text = finalText;
     }	
 
+//csak gépen
 else if(message.includes('számológép')) {
         window.open('Calculator:///')
         const finalText = "Számológép megnyitása";
         speech.text = finalText;
     }    
 
+//nemjó
 else if(message.includes('spotify')) {
         window.open('file://C:\Users\\%46odor\\AppData\\Roaming\\Spotify\\Spotify.exe')
         const finalText = "Spotify megnyitása";
         speech.text = finalText;
     }    
-
+	
+//nemjó
 else if(message.includes('önéletrajz')) {
         window.open('file://C:\Users\%66odor\OneDrive\Asztali_gép\Fodor_Márk_CV.pdf')
         const finalText = "Márk önéletrajzának megnyitása";
