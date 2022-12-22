@@ -64,9 +64,15 @@ function login(){
 
 function teszt(){
 	var msg = new SpeechSynthesisUtterance();
-	msg.text = "Online vagyunk, készen állunk.";
+	msg.text = "Online vagyunk. Készen állunk.";
 	window.speechSynthesis.speak(msg);
 }	
+
+window.addEventListener("keyup", function(e){
+    if(e.keyCode == 32){
+		recognition.start();
+	}
+})	
 
 
 window.addEventListener('load', (event)=>{
