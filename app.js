@@ -4,9 +4,10 @@ const content = document.querySelector('.content');
 function speak(sentence) {
     const text_speak = new SpeechSynthesisUtterance(sentence);
 
-    text_speak.rate = 1;
-    text_speak.pitch = 1;
-
+    
+	text_speak.pitch = 1;
+	text_speak.rate = 1;
+	
     window.speechSynthesis.speak(text_speak);
 }
 
@@ -31,10 +32,45 @@ function wishMe() {
     }
 }
 
-window.addEventListener('load', ()=>{
-    speak("Activating Inertia");
-    speak("Going online");
-    wishMe();
+function elemzes() {
+	
+	num = (Math.random()*5)+1;
+	
+	if(num >= 1 && num < 2) {
+        speak("gyors elemzés, a kudarc valószínűsége egy a kettőhöz. Nem tudom mire számított uram.");
+    }
+	
+	else if(num >= 2 && num < 3) {
+        speak("gyors elemzés, életfunkciók stabilitása, magas szívverés észlelése. Óhajtja hogy játszak csilles zenét uram?");
+    }
+	
+	else if(num >= 3 && num < 4) {
+        speak("gyors elemzés, életfunkciók rendben. Kitűnő formában van uram!");
+    }
+	
+	else if(num >= 4 && num < 5) {
+        speak("gyors elemzés, paradoxonok észlelése, Paradigma váltás bekövetkezésének valószínűsége egy a negyvenkilenchez.");
+    }
+	
+	else {
+        speak("gyors elemzés, lehetséges hibák kiszűrése folyamatban, keresés befejeződött, nincs találat");
+    }
+	
+}	
+	
+function login(){
+	
+}
+
+function teszt(){
+	var msg = new SpeechSynthesisUtterance();
+	msg.text = "Online vagyunk, készen állunk.";
+	window.speechSynthesis.speak(msg);
+}	
+
+
+window.addEventListener('load', (event)=>{
+	teszt();
 })
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -63,19 +99,29 @@ function speakThis(message) {
 //szövegek
 
 if(message.includes('hé') || message.includes('helló')) {
-        const finalText = "Üdv főnök";
-        speech.text = finalText;
+        const finalText = wishMe();
+		speech.text = "";
     }
 	
 else if(message.includes('hallasz') || message.includes('veszed az adást')) {
         const finalText = "Tisztán és érthetően, vége.";
         speech.text = finalText;
     }
+
+else if(message.includes('gyors elemzést') || message.includes('gyors elemzés') || message.includes('gyorselemzést') || message.includes('gyorselemzés')) {
+        const finalText = elemzes();
+		speech.text = "";
+	}
 	
 else if(message.includes('használd az erőt')) {
         const finalText = "Attól tartok alábecsüli a képességeimet uram";
         speech.text = finalText;
     }
+	
+else if(message.includes('teszt')) {
+        const finalText = teszt();
+        speech.text = "";
+    }	
 	
 else if(message.includes('cupp cupp')) {
         const finalText = "Ki az, betűzd, betűzd ki, Ká, Í";
@@ -315,12 +361,18 @@ else if(message.includes('keanu reeves')) {
         speech.text = finalText;
     }
 	
+else if(message.includes('facebook stubenvoll fruzsina')) {
+        window.open(`https://www.facebook.com/fruzsina.stubenvoll`, "_blank");
+        const finalText = "Az adott személy keresése istennő";
+        speech.text = finalText;
+    }	
+	
 else if(message.includes('stubenvoll fruzsina')) {
         window.open(`https://www.google.com/search?q=Stubenvoll+Fruzsina&rlz=1C1SQJL_huHU913HU913&sxsrf=ALiCzsbgNWEdpCTfNTmtCkOuPjiOKHOsAA%3A1671653450588&ei=SmijY_-1I7zl7_UPy8ex2Ak&ved=0ahUKEwj_gvCwwov8AhW88rsIHctjDJsQ4dUDCA8&uact=5&oq=Stubenvoll+Fruzsina&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIFCAAQogQyBQgAEKIEMgUIABCiBDIFCAAQogRKBAhBGABKBAhGGABQAFjcCWCGEWgBcAB4AIABeYgB0QGSAQMxLjGYAQCgAQHAAQE&sclient=gws-wiz-serp`, "_blank");
         const finalText = "Keresési találatok erre istennő";
         speech.text = finalText;
-    }	
-
+    }
+	
 else if(message.includes('játssz akció zenét')) {
         window.open(`https://www.youtube.com/watch?v=hSQasEQ43_k`, "_blank");
         const finalText = "Akció zene indítása";
