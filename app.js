@@ -15,20 +15,20 @@ function wishMe() {
     var day = new Date();
     var hr = day.getHours();
 
-    if(hr >= 0 && hr < 12) {
-        speak("Jó reggelt főnök");
+    if(hr >= 5 && hr <= 11) {
+        speak("Jó reggelt uram");
     }
 
-    else if(hr == 12) {
-        speak("Napokat uram");
+    else if(hr > 11 && hr <= 13) {
+        speak("Üdvözlöm uram");
     }
 
-    else if(hr > 12 && hr <= 17) {
+    else if(hr > 13 && hr <= 17) {
         speak("Szép délutánt uram");
     }
 
     else {
-        speak("Jó estét főnök");
+        speak("Jó estét uram");
     }
 }
 
@@ -56,11 +56,34 @@ function elemzes() {
         speak("gyors elemzés, lehetséges hibák kiszűrése folyamatban, keresés befejeződött, nincs találat");
     }
 	
-}	
-	
-function login(){
-	
 }
+
+function adatok() {
+	
+	num = (Math.random()*4)+1;
+	
+	if(num >= 1 && num < 2) {
+        speak("A győzelem valószínűsége 85 százalék. Gyengepont, láb sorozatos támadása. Megjegyzés, kerülje a földharcot.");
+    }
+	
+	else if(num >= 2 && num < 3) {
+        speak("Nincs benne semmi említésre méltó, ami persze már önmagában is említésre méltó.");
+    }
+	
+	else if(num >= 3 && num < 4) {
+        speak("Szélerősség minimális, célozzon a szívre!");
+    }
+	
+	else if(num >= 4 && num < 5) {
+        speak("Célpontok elemzése. Ó, hogy egyedül van, de uram, itt semmi szüksége rám, a győzelem valószínűsége száz százalék.");
+    }
+	
+	else {
+        speak("");
+    }
+	
+}	
+
 
 function teszt(){
 	var msg = new SpeechSynthesisUtterance();
@@ -76,6 +99,7 @@ window.addEventListener("keyup", function(e){
 
 
 window.addEventListener('load', (event)=>{
+	wishMe();
 	teszt();
 })
 
@@ -124,9 +148,9 @@ else if(message.includes('használd az erőt')) {
         speech.text = finalText;
     }
 	
-else if(message.includes('teszt')) {
-        const finalText = teszt();
-        speech.text = "";
+else if(message.includes('próba')) {
+        const finalText = "Hangerő szinkronizálása a környezethez. Ne kapcsoljon ki amíg a folyamat tart. Szinkronizálás befejeződött.";
+        speech.text = finalText;
     }	
 	
 else if(message.includes('cupp cupp')) {
@@ -195,7 +219,7 @@ else if(message.includes('mi az élet értelme')) {
     }
 	
 else if(message.includes('van élet a halál után')) {
-        const finalText = "hogy neked lesz e azt nem tudom, de ha ez vígasztal nekem lesz";
+        const finalText = "hogy neked lesz e azt nem tudom, de ha ez vígasztal, nekem lesz";
         speech.text = finalText;
     }
 
@@ -229,15 +253,10 @@ else if(message.includes('ezek gúnyolódnak rajtunk')) {
         speech.text = finalText;
     }
 	
-else if(message.includes('elemzést')) {
-        const finalText = "A győzelem valószínűsége 85 százalék. Gyengepont, láb sorozatos támadása. Megjegyzés, kerülje a földharcot.";
-        speech.text = finalText;
+else if(message.includes('elemzést') || message.includes('elemzés')){
+		const finalText = adatok();
+		speech.text = "";
     }
-	
-else if(message.includes('elemzés')) {
-        const finalText = "Nincs benne semmi említésre méltó, ami persze már önmagában is említésre méltó.";
-        speech.text = finalText;
-    }	
 	
 else if(message.includes('nem látom hogy segítenél')) {
         const finalText = "Egy virtuális asszisztens ÉJÁJ vagyok uram, csak segíteni tudok.";
@@ -288,13 +307,13 @@ else if(message.includes('útvonalterv')) {
         speech.text = finalText;
     }  
 
-//nem jó
+//instabil
 else if(message.includes('időzítő') && message.includes('perc')) {
-        window.open(`https://www.google.com/search?q=${message.replace("időzítő", "timer")}`, "_blank");
+        window.open(`https://www.google.com/search?q=timer${message.replace("időzítő", "")}`, "_blank");
         const finalText = "Időzítő beállítva";
         speech.text = finalText;
     } 	
-
+	
 else if(message.includes('fordítás')) {
         window.open(`https://translate.google.hu/?hl=hu&tab=rT&sl=en&tl=hu&text=${message.replace("fordítás", "")}&op=translate`, "_blank"); 
         const finalText = "Fordítás";
@@ -360,6 +379,12 @@ else if(message.includes('orbán viktor')) {
         const finalText = "Keresési találatok erre tolvajok fejedelme";
         speech.text = finalText;
     }
+	
+else if(message.includes('pornhub')) {
+        window.open(`https://www.google.com/search?q=tr%C3%B3nok+harca&rlz=1C1SQJL_huHU913HU913&oq=tr%C3%B3nok+harca&aqs=chrome.0.0i355i433i512j46i433i512j46i512l2j0i512l6.3043j0j7&sourceid=chrome&ie=UTF-8`, "_blank");
+        const finalText = "A kereséséhez legközelebb konvergáló oldal felkeresése";
+        speech.text = finalText;
+    }	
 
 else if(message.includes('keanu reeves')) {
         window.open(`https://www.google.com/search?q=Keanu+Reeves&rlz=1C1SQJL_huHU913HU913&sxsrf=ALiCzsY_nv41CjfZIHQ7tOhvvj2A0-s06g%3A1671619238158&ei=puKiY4qaCbSB9u8P2ca02A8&ved=0ahUKEwiKhY_3wor8AhW0gP0HHVkjDfsQ4dUDCA8&uact=5&oq=Keanu+Reeves&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIICC4QsQMQgAQyCAgAEIAEELEDMggIABCABBDLATIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgARKBAhBGABKBAhGGABQAFgAYJgCaABwAXgAgAFyiAFykgEDMC4xmAEAoAECoAEBwAEB&sclient=gws-wiz-serp`, "_blank");
@@ -479,12 +504,19 @@ else if(message.includes('spotify party zenék')) {
 //spotify end	
 	
 	
-//nemjó
+//gépről
 else if(message.includes('önéletrajz')) {
-        window.open('file://C:\Users\%66odor\OneDrive\Asztali_gép\Fodor_Márk_CV.pdf')
+        window.open('D:\Fodor Márk CV.pdf')
         const finalText = "Márk önéletrajzának megnyitása";
         speech.text = finalText;
-    }    
+    }  
+	
+//nemjó
+else if(message.includes('paint')) {
+        window.open('C:\Program Files\paint.net\PaintDotNet.exe')
+        const finalText = "Paint megnyitása";
+        speech.text = finalText;
+    }	
 	
 	
 //lezárás
