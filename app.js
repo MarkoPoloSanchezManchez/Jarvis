@@ -15,15 +15,15 @@ function wishMe() {
     var day = new Date();
     var hr = day.getHours();
 
-    if(hr >= 5 && hr <= 11) {
+    if(hr >= 4 && hr <= 10) {
         speak("Jó reggelt uram");
     }
 
-    else if(hr > 11 && hr <= 13) {
+    else if(hr > 10 && hr <= 12) {
         speak("Üdvözlöm uram");
     }
 
-    else if(hr > 13 && hr <= 17) {
+    else if(hr > 12 && hr <= 16) {
         speak("Szép délutánt uram");
     }
 
@@ -82,7 +82,83 @@ function adatok() {
         speak("");
     }
 	
-}	
+}
+
+function hau(){
+	
+	num = (Math.random()*5)+1;
+	
+	if(num >= 1 && num < 2) {
+        speak("Csodásan érzem magam uram.");
+    }
+	
+	else if(num >= 2 && num < 3) {
+        speak("Az ön távollétében végrehajtottam pár mellékszámítást, ezen felül készen állok a mai napra uram.");
+    }
+	
+	else if(num >= 3 && num < 4) {
+        speak("Hol is kezdjem, végrehajtottam pár mellékszámítást amiket sürgősen látnia kell uram.");
+    }
+	
+	else if(num >= 4 && num < 5) {
+        speak("Remekül érzem magam uram, a túlterhelhetőségi szintem meglehetősen alacsony.");
+    }
+	
+	else {
+        speak("Hosszú történet uram. Az emberek ilyenkor szokták azt mondani hogy, idézem, semmi.");
+    }
+	
+	
+	
+}
+
+function zene(){
+	
+	num = (Math.random()*10)+1;
+	
+	if(num >= 1 && num < 2) {
+        window.open(`https://www.youtube.com/watch?v=5JygHSf7l7Q`, "_blank");
+    }
+	
+	else if(num >= 2 && num < 3) {
+        window.open(`https://www.youtube.com/watch?v=t8iOs-9oXHo&list=RDt8iOs-9oXHo&start_radio=1`, "_blank");
+    }
+	
+	else if(num >= 3 && num < 4) {
+        window.open(`https://www.youtube.com/watch?v=ek-672uRnhQ`, "_blank");
+    }
+	
+	else if(num >= 4 && num < 5) {
+        window.open(`https://www.youtube.com/watch?v=30aGtXWo0SU`, "_blank");
+    }
+	
+	else if(num >= 5 && num < 6) {
+        window.open(`https://www.youtube.com/watch?v=Zrly3QMUhoo`, "_blank");
+    }
+	
+	else if(num >= 6 && num < 7) {
+        window.open(`https://www.youtube.com/watch?v=q-yTKNbyEVk`, "_blank");
+    }
+	
+	else if(num >= 7 && num < 8) {
+        window.open(`https://www.youtube.com/watch?v=AaeX6v0mEqg`, "_blank");
+    }
+	
+	else if(num >= 8 && num < 9) {
+        window.open(`https://www.youtube.com/watch?v=731gW3_FCa0`, "_blank");
+    }
+	
+	else if(num >= 9 && num < 10) {
+        window.open(`https://www.youtube.com/watch?v=PRatgBkAJWk`, "_blank");
+    }
+	
+	else {
+        window.open(`https://www.youtube.com/watch?v=IOrbP1OqNsg`, "_blank");
+    }
+	
+	
+	
+}
 
 
 function teszt(){
@@ -163,12 +239,12 @@ else if(message.includes('hol tudnék elrejteni egy hullát')) {
         speech.text = finalText;
     }
 
-else if(message.includes('hogy vagy')) {
-        const finalText = "Csodásan érzem magam";
-        speech.text = finalText;
+else if(message.includes('hogy vagy') || message.includes('hogy érzed magad')) {
+        const finalText = hau();
+        speech.text = "";
     }
 
-else if(message.includes('hogy hívnak') || message.includes('ki vagy te') ) {
+else if(message.includes('hogy hívnak') || message.includes('ki vagy te') || message.includes('mi vagy te') ) {
         const finalText = "Jarvis vagyok. Tony Stark alkotott meg engem azzal a céllal, hogy megkönnyítsem a munkáját. De most az ön parancsaira várok";
         speech.text = finalText;
     }
@@ -179,17 +255,19 @@ else if(message.includes('jarvis')) {
     }
 
 else if(message.includes('mondd meg neki hogy jól néz ki')) {
-        const finalText = "Engedelmével futtattam egy gyors elemzést és arra a következtetésre jutottam, hogy nem csak szép de okos is. Ez veszélyes párosítás. Már csak a külső attribútumai alapján a felső 5 százalékba csoportosítottam.";
+        num = (Math.ceil(Math.random()*15))+5;
+		const finalText = "Engedelmével futtattam egy gyors elemzést és arra a következtetésre jutottam, hogy nem csak szép de okos is. Ez veszélyes párosítás. Már csak a külső attribútumai alapján a felső " + num + "százalékba csoportosítottam.";
         speech.text = finalText;
     }
 	
 else if(message.includes('mondd meg neki hogy dögösnek tartom')) {
-        const finalText = "Engedelmével futtattam egy gyors elemzést és arra a következtetésre jutottam, hogy a hölgy többre vágyik mint egy egy éjszakás kaland. Megjegyzés, az attribútumai alapján úgyvélem 97 egész 5 tized százalékban önhöz illő uram.";
+        num = (Math.ceil(Math.random()*10))+85;
+		const finalText = "Engedelmével futtattam egy gyors elemzést és arra a következtetésre jutottam, hogy a hölgy többre vágyik mint egy egy éjszakás kaland. Megjegyzés, az attribútumai alapján úgyvélem " + num + "egész 5 tized százalékban önhöz illő uram.";
         speech.text = finalText;
     }	
 	
 else if(message.includes('mondd meg neki hogy tetszik nekem')) {
-        const finalText = "Engedelmével futtattam egy gyors elemzést és arra a következtetésre jutottam, hogy sikeres első benyomást tett uram. Külső és belső attribútumai tökéletesen megfelelnek az ön által megadott paramétereknek. Emlékeztető, bemutatkozás, randifelkérés, számcsere.";
+		const finalText = "Engedelmével futtattam egy gyors elemzést és arra a következtetésre jutottam, hogy sikeres első benyomást tett uram. Külső és belső attribútumai tökéletesen megfelelnek az ön által megadott paramétereknek. Emlékeztető, bemutatkozás, randifelkérés, számcsere.";
         speech.text = finalText;
     }	
 	
@@ -445,6 +523,11 @@ else if(message.includes('előzmények')) {
         speech.text = finalText;
     }
 	
+else if(message.includes('zene')) {
+        const finalText = zene();
+		speech.text = "";
+    }	
+	
 
 
 
@@ -504,7 +587,7 @@ else if(message.includes('spotify party zenék')) {
 //spotify end	
 	
 	
-//gépről
+//nemjó
 else if(message.includes('önéletrajz')) {
         window.open('D:\Fodor Márk CV.pdf')
         const finalText = "Márk önéletrajzának megnyitása";
